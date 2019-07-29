@@ -2,10 +2,17 @@
 
   "manifest_version": 2,
   "name": "Simple-Fast calculator",
-  "version": "1.0.1",
+  "version": "1.0.1.0",
+
+  "applications": {
+    "gecko": {
+      "strict_min_version": "57.0"
+    }
+  },
+
 
   "description": "It is a simple calculator. It was created in order to not open the system calculator every time, if necessary, or go to sites with calculators.\nThe calculator supports the simplest arithmetic operations. in the next version will be added: degree of trigonometric functions, etc.",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+  "homepage_url": "https://github.com/moroshenko/simple-fast-calculator",
   "icons": {
     "48": "icons/48x.png",
     "96": "icons/96x.png"
@@ -15,16 +22,16 @@
     "activeTab"
   ],
 
+  
+
   "browser_action": {
     "default_icon": "icons/48x.png",
     "default_title": "Calculator",
     "default_popup": "popup/calculator.html"
-  },
+  }
 
-  "web_accessible_resources": [
-    "beasts/frog.jpg",
-    "beasts/turtle.jpg",
-    "beasts/snake.jpg"
-  ]
+
 
 }
+
+
