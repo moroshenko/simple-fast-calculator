@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "Simple-Fast calculator",
+  "version": "1.0.1",
+
+  "description": "It is a simple calculator. It was created in order to not open the system calculator every time, if necessary, or go to sites with calculators.\nThe calculator supports the simplest arithmetic operations. in the next version will be added: degree of trigonometric functions, etc.",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+  "icons": {
+    "48": "icons/48x.png",
+    "96": "icons/96x.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/48x.png",
+    "default_title": "Calculator",
+    "default_popup": "popup/calculator.html"
+  },
+
+  "web_accessible_resources": [
+    "beasts/frog.jpg",
+    "beasts/turtle.jpg",
+    "beasts/snake.jpg"
+  ]
+
+}
