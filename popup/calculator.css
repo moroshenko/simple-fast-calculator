@@ -4,8 +4,9 @@
 }
 
 .chmod-btn {
-    margin: 5% auto;
+    margin: 5px auto;
     padding: 4px;
+    display: ruby;
     text-align: center;
     font-size: 1.5em;
     cursor: default;
@@ -16,7 +17,6 @@
 .chmod-btn:hover {
 
     background-color: burlywood;
-    cursor: move;
 }
 
 .button {

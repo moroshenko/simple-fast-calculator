@@ -21,6 +21,23 @@ var num2 = "0";
 var answ;
 var current_num = FIRST;
 
+var isVisible = true;
+function more(){
+    var typee
+    var typee2
+    if(isVisible) {typee = "none"; typee2 = typee; document.getElementById("chmod").textContent = "MORE ->"}
+    else {typee = "block"; typee2 = "ruby"; document.getElementById("chmod").textContent = "<- LESS"}
+
+    document.getElementById("sincos").style.display = typee;
+
+    document.getElementById("pow").style.display = typee2;
+    document.getElementById("dot").style.display = typee2;
+    document.getElementById("sec_pow").style.display = typee2;
+    document.getElementById("sqrt").style.display = typee2;
+    isVisible = !isVisible;
+
+}
+
 function displayNum(num) {
 
     if(num1.length >= 14){
@@ -168,6 +185,8 @@ function dot() {
 
 sign = PLUS_SIGN;
 
+more();
+
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("num")) {
 
@@ -219,7 +238,7 @@ document.addEventListener("click", (e) => {
         chSign();
     }
     else if(e.target.classList.contains("chmod-btn")) {
-        chMod();
+        more();
     }
 
 });
