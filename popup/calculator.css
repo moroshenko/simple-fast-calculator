@@ -1,7 +1,6 @@
 
-
 .fullscr {
-    width: 105px;
+    width: 100%;
 }
 
 .chmod-btn {
@@ -24,15 +23,12 @@
 
     margin: 5% auto;
     padding: 4px;
-    text-align: right;
+    text-align: center;
+    width: 25px;
     font-size: 1.5em;
     cursor: default;
 }
 
-.button:hover {
-
-    cursor: move;
-}
 
 .num {
     border: aqua;
@@ -67,7 +63,6 @@
 
 .text {
     background-color: #99f2ef;
-    width: 105px;
 
     text-align: center;
 }
