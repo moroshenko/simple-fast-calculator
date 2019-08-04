@@ -157,10 +157,10 @@ function equal(){
             break;
 
     }
-    displayNum(answ);
     num1 = answ.toString();
     num2 = "0";
     current_num = FIRST;
+    displayNum(num1);
 }
 
 function chSign() {
