@@ -35,9 +35,9 @@ function addChar(num){
     }
     else {
         if(num2 != "0")
-            num2 = num2 + num;
+            num2 = num2 + num.toString();
         else
-            num2 = num;
+            num2 = num.toString();
 
         console.log(num2);
         displayNum(num2);
@@ -58,35 +58,12 @@ function clear(){
     }
 }
 
-function add(){
+function chOp(op){
     current_num = SECOND;
-    operator = ADD;
-    displayNum(num2);
+    operator = op;
+    displayNum(num2);    
 }
 
-function minus(){
-    current_num = SECOND;
-    operator = MINUS;
-    displayNum(num2);
-}
-
-function mult(){
-    current_num = SECOND;
-    operator = MULT;
-    displayNum(num2);
-}
-
-function div(){
-    current_num = SECOND;
-    operator = DIV;
-    displayNum(num2);
-}
-
-function pow(){
-    current_num = SECOND;
-    operator = POW;
-    displayNum(num2);
-}
 
 function equal(){
     numO = +num1;
@@ -133,7 +110,7 @@ function chSign() {
         sign = PLUS_SIGN;
     */
     if(current_num == FIRST) {num1 = (-num1).toString(); displayNum(num1)}
-    else {num2 = -num2; displayNum(num2)}
+    else {num2 = (-num2).toString(); displayNum(num2)}
 
 }
 
@@ -162,12 +139,12 @@ document.addEventListener("click", (e) => {
         sign = PLUS_SIGN;
         if(choseButton === "clear") clear();
 
-        if(choseButton === "add") add();
-        if(choseButton === "minus") minus();
-        if(choseButton === "mult") mult();
-        if(choseButton === "pow") pow();
-        if(choseButton === "div") div();
-        if(choseButton === "dot") dot();
+        if(choseButton === "add") chOp(ADD);
+        if(choseButton === "minus") chOp(MINUS);
+        if(choseButton === "mult") chOp(MULT);
+        if(choseButton === "pow") chOp(POW);
+        if(choseButton === "div") chOp(DIV);
+        if(choseButton === "dot") dot();``
         if(choseButton === "sec_pow") {
             if(current_num == SECOND)
                 equal();
