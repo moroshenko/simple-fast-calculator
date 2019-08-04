@@ -11,8 +11,8 @@ var PLUS_SIGN = '';
 var operator;
 var sign;
 
-var num1 = 0;
-var num2 = 0;
+var num1 = "0";
+var num2 = "0";
 var answ;
 var current_num = FIRST;
 
@@ -23,10 +23,10 @@ function displayNum(num) {
 
 function addChar(num){
     if(current_num === FIRST) {
-        if(num1 != 0)
-            num1 = num1*10 + num;
+        if(num1 != "0")
+            num1 = num1 + num.toString();
         else
-            num1 += num;
+            num1 = num.toString();
 
         console.log(num1);
         displayNum(num1);
@@ -34,10 +34,10 @@ function addChar(num){
 
     }
     else {
-        if(num2 != 0)
-            num2 = num2*10 + num;
+        if(num2 != "0")
+            num2 = num2 + num;
         else
-            num2 += num;
+            num2 = num;
 
         console.log(num2);
         displayNum(num2);
@@ -48,12 +48,12 @@ function addChar(num){
 
 function clear(){
     if(current_num === FIRST) {
-        num1 = 0;
+        num1 = "0";
         console.log(num1);
         displayNum(num1);
     }
     else {
-        num2 = 0;
+        num2 = "0";
         displayNum(num2);
     }
 }
@@ -89,38 +89,40 @@ function pow(){
 }
 
 function equal(){
+    numO = +num1;
+    numS = +num2;
     switch (operator) {
         case ADD:
 
-            answ = num1 + num2;
+            answ = numO + numS;
 
             break;
         case MINUS:
 
-            answ = num1 - num2;
+            answ = numO - numS;
 
             break;
         case MULT:
 
-            answ = num1 * num2;
+            answ = numO * numS;
 
             break;
         case DIV:
 
-            answ = num1 / num2;
+            answ = numO / numS;
 
             break;
-        case POW:
+        /*case POW:
 
             for (i = 0;i < num2;i++)
                 num1 = num1*num1;
             answ = num1;
-            break;
+            break;*/
 
     }
     displayNum(answ);
-    num1 = answ;
-    num2 = 0;
+    num1 = answ.toString();
+    num2 = "0";
     current_num = FIRST;
 }
 
@@ -130,13 +132,18 @@ function chSign() {
     else
         sign = PLUS_SIGN;
     */
-    if(current_num == FIRST) {num1 = -num1; displayNum(num1)}
+    if(current_num == FIRST) {num1 = (-num1).toString(); displayNum(num1)}
     else {num2 = -num2; displayNum(num2)}
 
 }
 
 function chMod() {
 
+}
+
+function dot() {
+    if(current_num == FIRST) {num1 = num1 + "."; displayNum(num1)}
+    else {num2 = num2 + "."; displayNum(num2)}
 }
 
 sign = PLUS_SIGN;
@@ -151,17 +158,22 @@ document.addEventListener("click", (e) => {
 
     }
     else if (e.target.classList.contains("math")) {
-        var choseButton = e.target.textContent;
+        var choseButton = e.target.id;
         sign = PLUS_SIGN;
-        if(choseButton === "C") clear();
+        if(choseButton === "clear") clear();
 
-        if(choseButton === "+") add();
-        if(choseButton === "--") minus();
-        if(choseButton === "*") mult();
-        if(choseButton === "^") pow();
-        if(choseButton === "÷") div();
-        if(choseButton === "ee")  document.getElementById("assa").style.display = "none";
-        if(choseButton === "eea")  document.getElementById("assa").style.display = "block";
+        if(choseButton === "add") add();
+        if(choseButton === "minus") minus();
+        if(choseButton === "mult") mult();
+        if(choseButton === "pow") pow();
+        if(choseButton === "div") div();
+        if(choseButton === "dot") dot();
+        if(choseButton === "sec_pow") {
+            if(current_num == SECOND)
+                equal();
+            num1 = Math.pow(+num1, 2).toString();
+            displayNum(num1);
+        }
     }
     else if(e.target.classList.contains("equal")) {
 
