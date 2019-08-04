@@ -17,6 +17,7 @@
     "48": "icons/48x.png",
     "96": "icons/96x.png"
   },
+  
 
   "permissions": [
     "activeTab"
