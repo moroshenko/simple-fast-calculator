@@ -21,7 +21,8 @@
 
 .button {
 
-    margin: 5% auto;
+    
+    margin: 5px auto ;
     padding: 4px;
     text-align: center;
     width: 25px;
@@ -43,6 +44,22 @@
 .math:hover {
     border: #0a4bff;
     background: #0a4bff;
+}
+
+.spec {
+    border: #00ffbf;
+    background: #00ffbf;
+    margin: 5px auto ;
+    padding: 4px;
+    text-align: center;
+    width: 32.5px;
+    font-size: 1.5em;
+    cursor: default;
+}
+
+.spec:hover {
+    border: #009670;
+    background: #009670;
 }
 
 .equal {

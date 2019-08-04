@@ -6,6 +6,11 @@ var MINUS = "-";
 var MULT = "*";
 var DIV = "/";
 var POW = "^";
+var SQRT = "SQRT";
+var SIN = "SIN";
+var COS = "COS";
+var TG = "TG";
+var CTG = "CTG";
 var PLUS_SIGN = '';
 
 var operator;
@@ -17,6 +22,13 @@ var answ;
 var current_num = FIRST;
 
 function displayNum(num) {
+
+    if(num1.length >= 14){
+        num = +num1;
+        num = num.toFixed(10);
+        num1 = num.toString();
+    }
+
     document.getElementById("text").textContent = String(sign + num.toString());
     console.log("display success");
 }
@@ -58,6 +70,39 @@ function clear(){
     }
 }
 
+
+//fast equal!!! Dont only sqrt!!!
+function _sqrt(op = SQRT){
+    
+    if(current_num == SECOND)
+        equal();
+    switch(op){
+        case SQRT:
+            num1 = Math.sqrt(num1).toString();
+            break;
+        case SIN:
+            num1 = Math.sin(num1).toString();
+            break;
+        
+        case COS:
+            num1 = Math.cos(num1).toString();
+            break;
+            
+        case TG:
+            num1 = Math.tan(num1).toString();
+            break;  
+
+        case CTG:
+            num1 = 1 / Math.tan(num1).toString();
+            break;          
+    }
+    
+    displayNum(num1);
+    
+}
+
+
+
 function chOp(op){
     current_num = SECOND;
     operator = op;
@@ -89,12 +134,10 @@ function equal(){
             answ = numO / numS;
 
             break;
-        /*case POW:
+        case POW:
 
-            for (i = 0;i < num2;i++)
-                num1 = num1*num1;
-            answ = num1;
-            break;*/
+            answ = Math.pow(numO,numS);
+            break;
 
     }
     displayNum(answ);
@@ -144,7 +187,10 @@ document.addEventListener("click", (e) => {
         if(choseButton === "mult") chOp(MULT);
         if(choseButton === "pow") chOp(POW);
         if(choseButton === "div") chOp(DIV);
-        if(choseButton === "dot") dot();``
+        if(choseButton === "dot") dot();
+        if(choseButton === "pow") chOp(POW);
+        if(choseButton === "sqrt") _sqrt();
+
         if(choseButton === "sec_pow") {
             if(current_num == SECOND)
                 equal();
@@ -155,6 +201,18 @@ document.addEventListener("click", (e) => {
     else if(e.target.classList.contains("equal")) {
 
         equal();
+
+    }
+    else if(e.target.classList.contains("spec")) {
+
+        var choseButton = e.target.id;
+        sign = PLUS_SIGN;
+       
+        if(choseButton === "sin") _sqrt(SIN);
+        if(choseButton === "cos") _sqrt(COS);
+        if(choseButton === "tg") _sqrt(TG);
+        if(choseButton === "ctg") _sqrt(CTG);
+
 
     }
     else if(e.target.classList.contains("text")) {

@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Simple-Fast calculator",
-  "version": "1.0.1.4",
+  "version": "1.2.0.0",
 
   "applications": {
     "gecko": {
@@ -17,7 +17,7 @@
     "48": "icons/48x.png",
     "96": "icons/96x.png"
   },
-  
+
 
   "permissions": [
     "activeTab"
