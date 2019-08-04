@@ -112,9 +112,9 @@ function equal(){
             break;
         case POW:
 
-            for (i = 0;i < num2;i++)
-                num1 = num1*num1;
-            answ = num1;
+            for (i = 0;ia
+                num1 = na
+            answ = num1;a
             break;
 
     }
@@ -176,5 +176,3 @@ document.addEventListener("click", (e) => {
     }
 
 });
-
-
